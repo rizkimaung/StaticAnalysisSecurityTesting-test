@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-stretch AS base
+FROM php:7.4.29-fpm AS base
 
 WORKDIR /var/www/html
 
