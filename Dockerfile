@@ -5,9 +5,9 @@ WORKDIR /var/www/html
 RUN rm /etc/apt/preferences.d/no-debian-php
 RUN apt-get update && apt-get install -y mariadb-client zlib1g-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev libxpm-dev libvpx-dev libmagickwand-dev zip libzip-dev php-soap vim netcat iputils-ping wget python cron \
     && docker-php-ext-configure gd \
-		--with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
-		--with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
-		--with-xpm-dir=/usr/lib/x86_64-linux-gnu/ \
+		--with-freetype=/usr/lib/x86_64-linux-gnu/ \
+		--with-jpeg=/usr/lib/x86_64-linux-gnu/ \
+		--with-xpm=/usr/lib/x86_64-linux-gnu/ \
     && docker-php-ext-install pdo_mysql zip gd soap \
     && pecl install imagick \
     && docker-php-ext-enable imagick
